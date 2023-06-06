@@ -3,6 +3,7 @@ package com.mujio.dal.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 数据源信息表
@@ -11,10 +12,39 @@ import java.io.Serializable;
  * Create on 2023-04-27 22:26:37
  */
 @Data
-public class SysDatasource extends SysBaseParam implements Serializable {
+public class SysDatasource implements Serializable {
 
     private static final long serialVersionUID = 1598923831985L;
+    /**
+     * ID
+     */
+    private int id;
 
+    /**
+     * 租户ID
+     */
+    private int tenantId;
+
+    /**
+     * 创建人，不传默认sys
+     */
+    private String creator;
+
+    /**
+     * 修改人，不传默认sys
+     */
+    private String modifier;
+
+    /**
+     * 创建时间，默认当前时间
+     */
+    private Date createTime;
+
+    /**
+     * 修改时间，不传默认当前时间
+     */
+    private Date modifyTime;
+    
     /**
      * 状态，0:测试, 1:生产, 2:废弃
      */
@@ -23,7 +53,7 @@ public class SysDatasource extends SysBaseParam implements Serializable {
     /**
      * 数据源名称,长度不超过50
      */
-    private String datasourceName;
+    private String userName;
 
     /**
      * 别名，提高辨识度，长度不超过50
@@ -50,4 +80,16 @@ public class SysDatasource extends SysBaseParam implements Serializable {
      */
     private String extInfo;
 
+    @Override
+    public String toString() {
+        return "SysDatasource{" +
+                "status=" + status +
+                ", userName='" + userName + '\'' +
+                ", labelName='" + labelName + '\'' +
+                ", url='" + url + '\'' +
+//                ", password='" + password + '\'' +
+                ", type='" + type + '\'' +
+                ", extInfo='" + extInfo + '\'' +
+                '}';
+    }
 }

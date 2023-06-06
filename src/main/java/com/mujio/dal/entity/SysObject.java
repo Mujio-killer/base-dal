@@ -3,6 +3,7 @@ package com.mujio.dal.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 模型元数据表
@@ -11,10 +12,39 @@ import java.io.Serializable;
  * Create on 2023-04-27 22:26:37
  */
 @Data
-public class SysObject extends SysBaseParam implements Serializable {
+public class SysObject implements Serializable {
 
     private static final long serialVersionUID = 1593803349276L;
+    /**
+     * ID
+     */
+    private int id;
 
+    /**
+     * 租户ID
+     */
+    private int tenantId;
+
+    /**
+     * 创建人，不传默认sys
+     */
+    private String creator;
+
+    /**
+     * 修改人，不传默认sys
+     */
+    private String modifier;
+
+    /**
+     * 创建时间，默认当前时间
+     */
+    private Date createTime;
+
+    /**
+     * 修改时间，不传默认当前时间
+     */
+    private Date modifyTime;
+    
     /**
      * 状态，0:删除, 1:正常, 2:其他
      */

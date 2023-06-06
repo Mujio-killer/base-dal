@@ -46,19 +46,8 @@
         <!-- orm框架Bee依赖 -->
         <dependency>
             <groupId>org.teasoft</groupId>
-            <artifactId>bee</artifactId>
-            <version>2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.teasoft</groupId>
-            <artifactId>honey</artifactId>
-            <version>2.0</version>
-        </dependency>
-        <!--for log framework,Excel(poi),Redis cache,Android,HarmonyOS,Json,Tran Annotation -->
-        <dependency>
-            <groupId>org.teasoft</groupId>
-            <artifactId>bee-ext</artifactId>
-            <version>2.0</version>
+            <artifactId>bee-all</artifactId>
+            <version>2.1</version>
         </dependency>
 
         <!-- Mysql config.You need change it to the real database config. -->
@@ -68,7 +57,11 @@
             <version>5.1.47</version>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.18</version>
+        </dependency>
         <!-- log4j -->
         <dependency>
             <groupId>log4j</groupId>
