@@ -15,3 +15,13 @@ dal统一入口开发
 ## 20230606
 > 实现多数据源切换查询；
 > 发现Bee框架受限越来越多，准备重构，转投Mybatis-plus怀抱
+
+## 20230611
+> 转为Mybatis-plus,实现基本功能
+> 预期实现通用查询方法： 
+通用查询 
+select(List<Fields>).from(String tableName).where(Condition condition);
+通用更新
+update()
+
+
